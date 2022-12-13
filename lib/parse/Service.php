@@ -29,7 +29,7 @@ abstract class Service {
 
     public function requestToYouTube($videoUrl): ?string {
         $videoUrl = urlencode($videoUrl);
-        $responseBody = file_get_contents("https://www.youtube.com/oembed?url={$videoUrl}&format=xml&width=560");
+        $responseBody = file_get_contents("https://www.youtube.com/oembed?url={$videoUrl}&format=xml");
         if (!$responseBody) {
             return null;
         }
